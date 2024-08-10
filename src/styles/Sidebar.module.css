@@ -1,0 +1,22 @@
+.navbar{
+    width: 15rem;
+    height: 100vh;
+    border-right: 1px solid #000;
+}
+
+.ulStyle{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    color: #fff;
+    
+}
+
+.liStyle{
+    padding: 1rem;
+    margin-top: 30px;
+    text-align: center;
+    color: #000;
+    font-size: 1.2rem;
+}
