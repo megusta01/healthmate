@@ -1,7 +1,17 @@
+import Image from "next/image";
+
 export default function Header() {
+
+    const HEADER: React.CSSProperties = {
+        backgroundColor: '#095947',
+        display: 'flex',
+        justifyContent: 'center',
+        padding: '15px 0',
+    }
+
     return (
-        <header className="header text-white p-4 text-center">
-            <img src="Frame-cópia.png" alt="" />
+        <header style={HEADER}>
+            <Image src="/Frame-cópia.png" alt="" width={180} height={0} />
         </header>
     );
 }

@@ -1,4 +1,5 @@
 import styles from '../styles/Login.module.css';
+import GoogleLogin from '@/components/GoogleLogin';
 
 export default function LoginForm() {
   return (
@@ -18,16 +19,13 @@ export default function LoginForm() {
                 <input type="password" placeholder="Digite sua senha..." className={styles.inputField} />
               </div>
               <div>
-                <a  className='cadastrar' href="">Não tem conta? Cadastre-se</a>
+                <a  className='cadastrar' href="Cadastro">Não tem conta? Cadastre-se</a>
               </div>
               <div className={styles.submit}>
                 <button type="submit">Entrar</button>
               </div>
               <div className={styles.googleLogin}>
-                <button type="button" className={styles.googleButton}>
-                  <img src="google.png" alt="Google" className={styles.googleIcon} />
-                  Login com o Google
-                </button>
+                <GoogleLogin />
               </div>
             </div>
           </form>
