@@ -1,11 +1,19 @@
 import React from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
+
+// interface ModalProps {
+//   isOpen: boolean;
+//   setModalOpen: () => void;
+// }
 
 const CadPaciente = () => {
+  // if (!isOpen) return null;
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
       <div className="bg-white rounded-lg w-1/2 p-8 shadow-lg relative">
-        <button className="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
-          <i className="fas fa-times"></i>
+        <button  className="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+          <FontAwesomeIcon icon={faCircleXmark} />
         </button>
         <h2 className="text-center text-2xl font-semibold mb-6">Cadastro de Paciente</h2>
         

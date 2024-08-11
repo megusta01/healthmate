@@ -1,17 +1,23 @@
 import styles from '../styles/Sidebar.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUsers, faBell, faRectangleList, faGear, faHandshake } from '@fortawesome/free-solid-svg-icons';
+import {
+    faUsers,
+    faBell, 
+    faRectangleList,
+    faGear,
+    faHandshake
+} from '@fortawesome/free-solid-svg-icons';
 
 export default function Sidebar() {
     return (
         <aside className="w-1/5 bg-gray-100 p-4">
             <nav>
                 <ul className="space-y-4">
-                    <li><a href="#"><FontAwesomeIcon icon={faUsers} />Pacientes</a></li>
-                    <li><a href="#"><FontAwesomeIcon icon={faBell} />Notificações</a></li>
-                    <li><a href="#"><FontAwesomeIcon icon={faRectangleList} />Relatórios</a></li>
-                    <li><a href="#"><FontAwesomeIcon icon={faGear} />Configurações</a></li>
-                    <li><a href="#"><FontAwesomeIcon icon={faHandshake} />Parcerias</a></li>
+                    <li><a href="#"><FontAwesomeIcon icon={faUsers} className='me-4' />Pacientes</a></li>
+                    <li><a href="#"><FontAwesomeIcon icon={faBell} className='me-5' />Notificações</a></li>
+                    <li><a href="#"><FontAwesomeIcon icon={faRectangleList} className='me-4' />Relatórios</a></li>
+                    <li><a href="#"><FontAwesomeIcon icon={faGear} className='me-5' />Configurações</a></li>
+                    <li><a href="#"><FontAwesomeIcon icon={faHandshake} className='me-3' />Parcerias</a></li>
                 </ul>
             </nav>
             <div className="mt-auto">

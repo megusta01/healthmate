@@ -1,40 +1,35 @@
+import styles from '../styles/Login.module.css';
+
 export default function LoginForm() {
   return (
     <>
-      <div>
-        <div>
-          <h1 className="text-2xl">Bem-vindo ao HealthMate</h1>
-          <p>
-            O HealthMate é um sistema de gerenciamento de pacientes e
-            consultas. Com ele você pode cadastrar pacientes, agendar
-            consultas, emitir relatórios e muito mais.
-          </p>
+      <div className={styles.loginContainer}>
+        <div className={styles.background}>
+          <img src="Frame-cópia.png" alt="Healthmate Logo" className={styles.logo} />
         </div>
-        <div>
-          <h1 className="text-2xl">Faça seu login</h1>
-          <form>
-            <div>
-              <label htmlFor="email">E-mail</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Digite seu e-mail"
-              />
+        <div className={styles.login}>
+          <form action="">
+            <div className={styles.container}>
+              <h2 className={styles.title}>LOGIN</h2>
+              <div className={styles.inputContainer}>
+                <input type="text" placeholder="Digite seu email..." className={styles.inputField} />
+              </div>
+              <div className={styles.inputContainer}>
+                <input type="password" placeholder="Digite sua senha..." className={styles.inputField} />
+              </div>
+              <div>
+                <a  className='cadastrar' href="">Não tem conta? Cadastre-se</a>
+              </div>
+              <div className={styles.submit}>
+                <button type="submit">Entrar</button>
+              </div>
+              <div className={styles.googleLogin}>
+                <button type="button" className={styles.googleButton}>
+                  <img src="google.png" alt="Google" className={styles.googleIcon} />
+                  Login com o Google
+                </button>
+              </div>
             </div>
-            <div>
-              <label htmlFor="password">Senha</label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                placeholder="Digite sua senha"
-              />
-            </div>
-            <button type="submit">Entrar</button>
-            <button>
-              Login com Google
-            </button>
           </form>
         </div>
       </div>

@@ -42,6 +42,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, setModalOpen, children }) => {
           <FontAwesomeIcon icon={faCircleXmark} />
         </button>
         
+        
       </div>
     </div>
   );
