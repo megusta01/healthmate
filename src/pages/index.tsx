@@ -6,7 +6,7 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import CadPaciente from "@/components/CadPaciente";
-import Dashboard from "@/components/dashboard";
+import Dashboard from "@/components/Dashboard";
 
 
 

@@ -11,7 +11,7 @@ export default function Header() {
 
     return (
         <header style={HEADER}>
-            <Image src="/Frame-cópia.png" alt="" width={180} height={0} />
+            <Image src="/Frame-cópia.png" alt="" width={130} height={0} />
         </header>
     );
 }

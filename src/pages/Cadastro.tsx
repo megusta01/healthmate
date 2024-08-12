@@ -31,17 +31,17 @@ export default function Cadastrar() {
                         <input
                             type="text"
                             placeholder="Nome"
-                            className="border rounded p-2 w-full"
+                            className="border rounded-lg p-2 w-full"
                         />
                         <input
                             type="text"
                             placeholder="Sobrenome"
-                            className="border rounded p-2 w-full"
+                            className="border rounded-lg p-2 w-full"
                         />
                         <input
                             type="tel"
                             placeholder="Telefone"
-                            className="border rounded p-2 w-full"
+                            className="border rounded-lg p-2 w-full"
                         />
                         <input
                             type="text"
@@ -49,33 +49,33 @@ export default function Cadastrar() {
                             value={date}
                             onChange={handleDateChange}
                             maxLength={10}
-                            className="border rounded p-2 w-full"
+                            className="border rounded-lg p-2 w-full"
                         />
                         <input
                             type="email"
                             placeholder="Email"
-                            className="border rounded p-2 w-full"
+                            className="border rounded-lg p-2 w-full"
                         />
                         <input
                             type="email"
                             placeholder="Confirmar email"
-                            className="border rounded p-2 w-full"
+                            className="border rounded-lg p-2 w-full"
                         />
                         <input
                             type="password"
                             placeholder="Senha"
-                            className="border rounded p-2 w-full"
+                            className="border rounded-lg p-2 w-full"
                         />
                         <input
                             type="password"
                             placeholder="Confirmar senha"
-                            className="border rounded p-2 w-full"
+                            className="border rounded-lg p-2 w-full"
                         />
                     </div>
-                    <div className="flex justify-center">
+                    <div className="flex justify-center ">
                         <button
                             type="submit"
-                            className="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-600 transition duration-200"
+                            className="bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition duration-200"
                         >
                             Cadastrar-se
                         </button>
