@@ -1,6 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 const CadPaciente = () => {
+  const [date, setDate] = useState<string>('');
+
+    const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        let input = e.target.value.replace(/\D/g, ''); // Remove qualquer caractere que não seja número
+        if (input.length > 2) {
+            input = `${input.slice(0, 2)}/${input.slice(2)}`;
+        }
+        if (input.length > 5) {
+            input = `${input.slice(0, 5)}/${input.slice(5)}`;
+        }
+        setDate(input);
+    };
+
   return (
     <div>
       <h2 className="text-center text-2xl font-semibold mb-6">Cadastro de Paciente</h2>
@@ -8,7 +21,7 @@ const CadPaciente = () => {
       <div className="grid grid-cols-2 gap-4 mb-6">
         <input type="text" placeholder="Nome completo" className="border p-2 rounded" />
         <input type="text" placeholder="Sexo" className="border p-2 rounded" />
-        <input type="date" placeholder="Data de nascimento" className="border p-2 rounded" />
+        <input type="text" placeholder="Data de nascimento" value={date} onChange={handleDateChange} maxLength={10} className="border p-2 rounded" />
         <input type="email" placeholder="Email" className="border p-2 rounded" />
         <input type="text" placeholder="Endereço" className="border p-2 rounded" />
         <input type="tel" placeholder="Telefone" className="border p-2 rounded" />

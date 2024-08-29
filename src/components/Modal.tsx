@@ -25,7 +25,7 @@ const MODAL_STYLE: React.CSSProperties = {
   position: 'relative',
   backgroundColor: 'white',
   padding: '30px',
-  borderRadius: '8px',
+  borderRadius: '20px',
   zIndex: 1001,
   width: '80%',
   maxWidth: '500px'
