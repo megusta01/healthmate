@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import { faCircleUser } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
@@ -41,8 +42,8 @@ export default function Header() {
                 <ul className="flex gap-5">
                     <li><a href="">Dashboard</a></li>
                     <li><a href="">Pacientes</a></li>
-                    <li><a href="">Notificações</a></li>
-                    <li><a href="">Relatórios</a></li>
+                    <li><a href="">Notificações</a></li> 
+                    <li><a href="/Relatorios">Relatórios</a></li>
                 </ul>
             </nav>
             <div >
