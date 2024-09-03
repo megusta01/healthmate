@@ -1,0 +1,53 @@
+/* Modal.module.css */
+.background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal {
+    position: relative;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    z-index: 1001;
+    width: 80%;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto; /* Mantém a rolagem dentro do container */
+    box-sizing: border-box; /* Garante que padding e border sejam considerados no tamanho */
+  }
+  
+  .modal::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .modal::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  .modal::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+  }
+  
+  .closeButton {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: #4b5563; /* text-gray-500 */
+    cursor: pointer;
+  }
+  
+  .closeButton:hover {
+    color: #374151; /* text-gray-700 */
+  }
+  
