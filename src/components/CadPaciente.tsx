@@ -34,10 +34,10 @@ const CadPaciente = () => {
     const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         let input = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
         if (input.length > 2) {
-            input = `${input.slice(0, 2)}/${input.slice(2)}`;
+            input = `${input.slice(0, 2)}-${input.slice(2)}`;
         }
         if (input.length > 5) {
-            input = `${input.slice(0, 5)}/${input.slice(5)}`;
+            input = `${input.slice(0, 5)}-${input.slice(5)}`;
         }
         setFormData({
             ...formData,
