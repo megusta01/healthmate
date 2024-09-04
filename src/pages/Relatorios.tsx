@@ -42,7 +42,7 @@ export default function Header() {
         padding: '50px 0',
         backgroundColor: '#f5f5f5',
     }
-    
+
     const SECTION_DIV: React.CSSProperties = {
         textAlign: 'center',
         backgroundColor: '#fff',
@@ -50,39 +50,38 @@ export default function Header() {
         borderRadius: '10px',
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
     }
-    
+
     const SECTION_P: React.CSSProperties = {
         fontSize: '24px',
         fontWeight: 'bold',
         color: '#333',
-        padding:'10px 300px 350px 300px',
+        padding: '5px 300px 30px 300px',
     }
-    
 
     return (
-      <>
-        <header style={HEADER}>
-            <Image src="/logo (1).svg" alt="" width={150} height={0} />
-            <nav style={NAV}>
-                <ul className="flex gap-5">
-                    <li><a href="">Pacientes</a></li>
-                    <li><a href="">Notificações</a></li> 
-                    <li><a href="/Relatorios">Relatórios</a></li>
-                </ul>
-            </nav>
-            <div>
-                <a href="" style={USUARIO}>
-                    <FontAwesomeIcon icon={faCircleUser} width={50} height={50} />
-                </a>
-            </div>
-        </header>
-        <section style={SECTION}>
-            <div style={SECTION_DIV}>
-                <p style={SECTION_P}>RELATÓRIOS</p>
-            </div>
-        </section>
-        <Footer />
-      </>
+        <>
+            <header style={HEADER}>
+                <Image src="/logo (1).svg" alt="" width={150} height={0} />
+                <nav style={NAV}>
+                    <ul className="flex gap-5">
+                        <li><a href="">Pacientes</a></li>
+                        <li><a href="">Notificações</a></li>
+                        <li><a href="/Relatorios">Relatórios</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <a href="" style={USUARIO}>
+                        <FontAwesomeIcon icon={faCircleUser} width={50} height={50} />
+                    </a>
+                </div>
+            </header>
+            <section style={SECTION}>
+                <div style={SECTION_DIV}>
+                    <p style={SECTION_P}>RELATÓRIO</p>
+                </div>
+            </section>
+            <Footer />
+        </>
     );
 }
 
