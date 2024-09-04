@@ -20,8 +20,8 @@ export default function Home() {
               <li><a href="#how-it-works" className="text-blue-600">Como Funciona</a></li>
               <li><a href="#benefits" className="text-blue-600">Benefícios</a></li>
               <li><a href="#testimonials" className="text-blue-600">Depoimentos</a></li>
-              <li><button onClick={() => navigateTo('/login')} className="text-blue-600">Login</button></li>
-              <li><button onClick={() => navigateTo('/signup')} className="bg-blue-600 text-white py-2 px-4 rounded-lg">Cadastre-se</button></li>
+              <li><button onClick={() => window.location.href ='/login'} className="text-blue-600">Login</button></li>
+              <li><button onClick={() => window.location.href = '/Cadastro'} className="bg-blue-600 text-white py-2 px-4 rounded-lg">Cadastre-se</button></li>
             </ul>
           </nav>
         </header>
