@@ -20,8 +20,12 @@ export default function Home() {
               <li><a href="#how-it-works" className="text-blue-600">Como Funciona</a></li>
               <li><a href="#benefits" className="text-blue-600">Benefícios</a></li>
               <li><a href="#testimonials" className="text-blue-600">Depoimentos</a></li>
-              <li><button onClick={() => window.location.href ='/login'} className="text-blue-600">Login</button></li>
-              <li><button onClick={() => window.location.href = '/Cadastro'} className="bg-blue-600 text-white py-2 px-4 rounded-lg">Cadastre-se</button></li>
+              <li>
+                <button onClick={() => window.location.href = '/login'} className="text-blue-600">Login</button>
+              </li>
+              <li>
+                <button onClick={() => window.location.href = '/Cadastro'} className="bg-blue-600 text-white py-2 px-4 rounded-lg">Cadastre-se</button>
+              </li>
             </ul>
           </nav>
         </header>
@@ -94,29 +98,29 @@ export default function Home() {
         </section>
 
         {/* Future Features Section */}
-      <section id="future-features" className="py-20">
-        <h2 className="text-4xl font-bold text-center mb-12">Funcionalidades Futuras</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="p-6 bg-white rounded-lg shadow-lg text-center">
-            <h3 className="text-2xl font-bold mb-4">Integração com Dispositivos Wearables</h3>
-            <p className="text-gray-600">
-              Monitore a saúde dos pacientes em tempo real através da integração com smartwatches e outros dispositivos vestíveis.
-            </p>
+        <section id="future-features" className="py-20">
+          <h2 className="text-4xl font-bold text-center mb-12">Funcionalidades Futuras</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="p-6 bg-white rounded-lg shadow-lg text-center">
+              <h3 className="text-2xl font-bold mb-4">Integração com Dispositivos Wearables</h3>
+              <p className="text-gray-600">
+                Monitore a saúde dos pacientes em tempo real através da integração com smartwatches e outros dispositivos vestíveis.
+              </p>
+            </div>
+            <div className="p-6 bg-white rounded-lg shadow-lg text-center">
+              <h3 className="text-2xl font-bold mb-4">Análise Preditiva de Saúde</h3>
+              <p className="text-gray-600">
+                Utilize inteligência artificial para prever possíveis complicações e ajustar tratamentos preventivamente.
+              </p>
+            </div>
+            <div className="p-6 bg-white rounded-lg shadow-lg text-center">
+              <h3 className="text-2xl font-bold mb-4">Consultas Virtuais</h3>
+              <p className="text-gray-600">
+                Agende e realize consultas virtuais diretamente pela plataforma, facilitando o contato entre pacientes e profissionais de saúde.
+              </p>
+            </div>
           </div>
-          <div className="p-6 bg-white rounded-lg shadow-lg text-center">
-            <h3 className="text-2xl font-bold mb-4">Análise Preditiva de Saúde</h3>
-            <p className="text-gray-600">
-              Utilize inteligência artificial para prever possíveis complicações e ajustar tratamentos preventivamente.
-            </p>
-          </div>
-          <div className="p-6 bg-white rounded-lg shadow-lg text-center">
-            <h3 className="text-2xl font-bold mb-4">Consultas Virtuais</h3>
-            <p className="text-gray-600">
-              Agende e realize consultas virtuais diretamente pela plataforma, facilitando o contato entre pacientes e profissionais de saúde.
-            </p>
-          </div>
-        </div>
-      </section>
+        </section>
 
         {/* Footer */}
         <footer className="py-10 text-center">
