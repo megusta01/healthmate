@@ -1,4 +1,8 @@
 import React from 'react';
+import { RiContactsFill } from "react-icons/ri";
+import { FaBriefcaseMedical } from "react-icons/fa";
+import { HiOutlineNewspaper } from "react-icons/hi";
+import { BsFillTelephoneFill } from "react-icons/bs";
 
 export default function Perfil() {
 
@@ -65,6 +69,8 @@ export default function Perfil() {
   };
 
   const botão: React.CSSProperties = {
+    display: 'flex',
+    alignItems: 'center',
     padding: '10px 20px',
     backgroundColor: '#fff',
     color: '#095947',
@@ -75,6 +81,8 @@ export default function Perfil() {
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
     width: '600px',
     height: '70px',
+    justifyContent: 'flex-start',
+    gap: '15px',
   };
 
   return (
@@ -85,10 +93,10 @@ export default function Perfil() {
         <h1 style={heading}>Nome</h1>
       </div>
       <div style={button}>
-        <button style={botão} onClick={() => window.location.href = '/'}>Informações Pessoais</button>
-        <button style={botão} onClick={() => window.location.href = '/'}>Medicamentos</button>
-        <button style={botão} onClick={() => window.location.href = '/'}>Relatório</button>
-        <button style={botão} onClick={() => window.location.href = '/'}>Suporte</button>
+        <button style={botão} onClick={() => window.location.href = '/'}><RiContactsFill/>Informações Pessoais</button>
+        <button style={botão} onClick={() => window.location.href = '/'}><FaBriefcaseMedical />Medicamentos</button>
+        <button style={botão} onClick={() => window.location.href = '/'}><HiOutlineNewspaper />Relatório</button>
+        <button style={botão} onClick={() => window.location.href = '/'}><BsFillTelephoneFill />Suporte</button>
       </div>
     </div>
   );
