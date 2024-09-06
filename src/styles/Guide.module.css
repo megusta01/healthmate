@@ -1,0 +1,73 @@
+/* Estilos gerais da section */
+.quickGuideSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 40px;
+    max-width: 100%; /* Limita a largura máxima */
+    margin: 0 auto; /* Centraliza a section */
+    flex-wrap: wrap; /* Permite o conteúdo se ajustar em telas menores */
+    gap: 40px; /* Espaçamento entre os elementos */
+}
+
+/* Container de conteúdo */
+.content {
+    max-width: 600px; /* Limite da largura do texto */
+    margin-right: 40px; /* Espaçamento entre o texto e a imagem */
+}
+
+/* Título e subtítulo */
+.title {
+    color: #004d40;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.subtitle {
+    color: #00796b;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+/* Descrição do texto */
+.description {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    text-align:justify;
+}
+
+/* Estilo do botão */
+.ctaButton {
+    background-color: #004d40;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: left;
+}
+
+.ctaButton:hover {
+    background-color: #00332e;
+}
+
+/* Estilos da imagem */
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.guideImage {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+}
