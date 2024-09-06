@@ -14,7 +14,7 @@ export default function LoginForm() {
 
     try {
       // Faz a requisição ao backend para validar o login
-      const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/login`, {
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/login`, {
         email,
         senha,
       });
