@@ -1,0 +1,83 @@
+.container {
+    max-width: 64rem;
+    margin: 2.5rem auto;
+}
+
+.title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.tableContainer {
+    max-height: 400px; /* Altura fixa */
+    overflow-y: auto; /* Habilita rolagem vertical quando houver muitos pacientes */
+    overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0.375rem;
+    border: 1px solid #e5e7eb; /* Adiciona uma borda para melhor visualização */
+}
+
+.table {
+    width: 100%; /* Garante que a tabela ocupe toda a largura disponível */
+    text-align: left;
+    color: #4B5563; /* Cor do texto */
+}
+
+.tableHead {
+    background-color: #F3F4F6; /* Fundo cinza claro */
+    text-transform: uppercase;
+}
+
+.tableHeaderCell {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #374151; /* Cor do texto no cabeçalho */
+}
+
+.tableRow {
+    background-color: #ffffff;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.tableRow:hover {
+    background-color: #F9FAFB; /* Cor mais clara ao passar o mouse */
+}
+
+.tableCell {
+    padding: 0.75rem 1.5rem;
+    color: #1F2937; /* Cor do texto */
+    font-weight: 500;
+}
+
+.emptyMessage {
+    text-align: center;
+    padding: 1rem;
+    color: #9CA3AF; /* Cor do texto quando não há pacientes */
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+.newPatientButton {
+    background-color: #065F46;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    position: fixed;
+    bottom: 2rem;
+}
+
+.newPatientButton:hover {
+    background-color: #047857; /* Cor do botão ao passar o mouse */
+}

@@ -2,22 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  
+:root {}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.header {
-  background-color: #095947;
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
-}
-
-.header img {
-  width: 10%;
-}
-.cadastrar {
-  text-decoration: underline;
-  font-size: 0.8rem;
-  color: #4E4E4E;
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }

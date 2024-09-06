@@ -2,52 +2,25 @@
 import { faCircleUser } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
+import styles from '../styles//header.module.css'; // Importa o CSS module
+import { useRouter } from "next/router";
 
 export default function Header() {
-
-    const HEADER: React.CSSProperties = {
-        backgroundColor: '#095947',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: '15px 0',
-        gap: '90px'
-    }
-
-    const NAV: React.CSSProperties = {
-        height: '36px',
-        display: 'flex',
-        alignItems: 'center',
-        gap: '20px',
-        color: '#000',
-        backgroundColor: '#fff',
-        borderRadius: '30px',
-        padding: '0px 20px'
-    }
-
-    const USUARIO: React.CSSProperties = {
-        height: '36px',
-        width: '36px',
-        display: 'flex',
-        alignItems: 'center',
-        color: '#fff',
-        fontSize: '36px',
-    }
-
+    const router = useRouter();
 
     return (
-        <header style={HEADER}>
+        <header className={styles.header}>
             <Image src="/logo (1).svg" alt="" width={150} height={0} />
-            <nav style={NAV}>
+            <nav className={styles.nav}>
                 <ul className="flex gap-5">
-                    <li><a href="">Dashboard</a></li>
-                    <li><a href="">Pacientes</a></li>
-                    <li><a href="">Notificações</a></li> 
-                    <li><a href="/Relatorios">Relatórios</a></li>
+                    <li><a href="/Dashboard" className={router.pathname === "/Dashboard" ? styles.active : ""}>Dashboard</a></li>
+                    <li><a href="/Pacientes" className={router.pathname === "/Pacientes" ? styles.active : ""}>Pacientes</a></li>
+                    <li><a href="/Notificacoes" className={router.pathname === "/Notificacoes" ? styles.active : ""}>Notificações</a></li> 
+                    <li><a href="/Relatorios" className={router.pathname === "/Relatorios" ? styles.active : ""}>Relatórios</a></li>
                 </ul>
             </nav>
-            <div >
-                <a href="" style={USUARIO}>
+            <div>
+                <a href="" className={styles.usuario}>
                     <FontAwesomeIcon icon={faCircleUser} width={50} height={50} />
                 </a>
             </div>

@@ -29,14 +29,17 @@ export default function Cadastrar() {
         e.preventDefault();
         console.log("Botão Cadastrar-se clicado"); 
         try {
+            const token = localStorage.getItem('token');
             // Faz a requisição ao backend para criar o novo profissional
             const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/profissional`, {
                 nome,
-                sobrenome,
-                telefone,
                 email,
+                telefone,
                 senha,
-                dataNascimento: date, // Certifique-se de que o backend está preparado para lidar com este campo
+            },{
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
             });
 
             if (response.status === 201) {

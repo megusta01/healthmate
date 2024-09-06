@@ -1,0 +1,35 @@
+.header {
+    background-color: #095947;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    gap: 90px;
+}
+
+.nav {
+    height: 36px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #000;
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 0px 20px;
+}
+
+.usuario {
+    height: 36px;
+    width: 36px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 36px;
+}
+
+.active {
+    background-color: #00A878; /* Cor de fundo do item ativo */
+    color: white; /* Cor do texto do item ativo */
+    border-radius: 20px;
+    padding: 5px 10px;
+}
