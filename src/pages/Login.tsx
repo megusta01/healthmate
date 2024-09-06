@@ -24,7 +24,7 @@ export default function LoginForm() {
         localStorage.setItem('token', response.data.token);
         
         // Redireciona o usuário para a tela de dashboard ou a tela desejada
-        router.push('/dashboard'); 
+        router.push('/Dashboard'); 
       }
     } catch (error) {
       console.error("Erro ao fazer login:", error);
@@ -62,11 +62,14 @@ export default function LoginForm() {
                   required
                 />
               </div>
-              <div>
-                <a className='cadastrar' href="Cadastro">Não tem conta? Cadastre-se</a>
+              <div className={styles.esqueceuSenha}>
+                <a className='esqueceuSenha' href="/EsqueceuSenha">Esqueceu a senha?</a>
               </div>
               <div className={styles.submit}>
                 <button type="submit">Entrar</button>
+              </div>
+              <div className={styles.submitCad}>
+                <button type="button" onClick={() => router.push('/Cadastro')}>Cadastrar</button>
               </div>
               <div className={styles.googleLogin}>
                 <GoogleLogin />
