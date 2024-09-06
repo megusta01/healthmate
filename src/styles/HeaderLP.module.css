@@ -1,0 +1,65 @@
+/* HeaderLP.module.css */
+
+/* Estilos gerais do header */
+
+.header {
+  background-color: #004d40;
+  /* Fundo verde escuro */
+  padding: 16px 0;
+  color: white;
+}
+
+/* Centraliza o conteúdo do header */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+}
+
+/* Logo */
+
+
+.logoImg {
+  height: 50%;
+  width: 50%;
+  margin-right: 8px;
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  gap: 32px;
+}
+
+.menuItem {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.menuItem:hover {
+  color: #b2dfdb;
+  /* Cor clara ao passar o mouse */
+}
+
+/* Botão de Login */
+.loginBtn {
+  background-color: #a5d6a7;
+  /* Verde claro */
+  color: #004d40;
+  /* Verde escuro */
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: auto;
+}
+
+.loginBtn:hover {
+  background-color: #81c784;
+}
