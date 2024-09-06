@@ -1,0 +1,41 @@
+/* Estilos gerais da section */
+.benefitsSection {
+    background-color: #e0f2f1;
+    padding: 40px;
+    border-radius: 8px;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* Título da seção */
+.title {
+    color: #004d40;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+/* Lista de benefícios */
+.benefitsList {
+    list-style-type: disc;
+    margin-left: 20px;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+    width: 75%;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.benefitsList li {
+    margin-bottom: 16px;
+}
+
+.benefitsList strong {
+    color: #00796b;
+}
