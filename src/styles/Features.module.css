@@ -1,0 +1,80 @@
+/* Estilos gerais da section */
+.section{
+    background-color: #e0f2f1;
+}
+
+.featuresSection {
+    
+    padding: 40px 0; /* Remove o padding lateral, mantendo o padding vertical */
+    border-radius: 8px;
+    width: 100%; /* Ocupa toda a largura da tela */
+    max-width: none; /* Remove a limitação da largura máxima */
+    margin: 0 auto;
+    text-align: center;
+    width: 75%;
+}
+
+/* Título da seção */
+.title {
+    color: #004d40;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 32px;
+}
+
+/* Container para a imagem e os cards */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px; /* Limita a largura interna para centralizar o conteúdo */
+    margin: 0 auto; /* Centraliza o conteúdo dentro da section */
+}
+
+/* Estilos da imagem */
+.imageContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.featureImage {
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Container dos cards */
+.cardsContainer {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Define duas colunas */
+    gap: 20px;
+    padding-left: 20px;
+}
+
+/* Estilos de cada card */
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.card h3 {
+    color: #004d40;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+}
