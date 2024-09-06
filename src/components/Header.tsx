@@ -15,7 +15,7 @@ export default function Header() {
                 <ul className="flex gap-5">
                     <li><a href="/Dashboard" className={router.pathname === "/Dashboard" ? styles.active : ""}>Dashboard</a></li>
                     <li><a href="/Pacientes" className={router.pathname === "/Pacientes" ? styles.active : ""}>Pacientes</a></li>
-                    <li><a href="/Notificacoes" className={router.pathname === "/Notificacoes" ? styles.active : ""}>Notificações</a></li> 
+                    <li><a href="/notificacao" className={router.pathname === "/notificacao" ? styles.active : ""}>Notificações</a></li> 
                     <li><a href="/Relatorios" className={router.pathname === "/Relatorios" ? styles.active : ""}>Relatórios</a></li>
                 </ul>
             </nav>
