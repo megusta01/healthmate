@@ -71,3 +71,80 @@
     height: 300px;
     object-fit: contain;
 }
+
+@media (max-width: 1200px) {
+    .quickGuideSection {
+      padding: 30px;
+    }
+  
+    .title {
+      font-size: 32px;
+    }
+  
+    .subtitle {
+      font-size: 20px;
+    }
+  
+    .description {
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .quickGuideSection {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .content {
+      margin-right: 0;
+    }
+  
+    .imageContainer {
+      margin-top: 20px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .guideImage {
+      width: 250px;
+      height: 250px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .guideImage {
+      width: 200px;
+      height: 200px;
+    }
+  
+    .title {
+      font-size: 24px;
+    }
+  
+    .subtitle {
+      font-size: 18px;
+    }
+  
+    .description {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 360px) {
+    .quickGuideSection {
+      padding: 20px;
+    }
+  
+    .title {
+      font-size: 20px;
+    }
+  
+    .subtitle {
+      font-size: 16px;
+    }
+  
+    .description {
+      font-size: 12px;
+    }
+  }

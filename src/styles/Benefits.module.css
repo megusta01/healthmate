@@ -39,3 +39,53 @@
 .benefitsList strong {
     color: #00796b;
 }
+
+@media (max-width: 1200px) {
+    .benefitsSection {
+      padding: 30px;
+    }
+  
+    .title {
+      font-size: 32px;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .benefitsList {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .title {
+      font-size: 28px;
+    }
+  
+    .benefitsList {
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .title {
+      font-size: 24px;
+    }
+  
+    .benefitsList {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 360px) {
+    .benefitsSection {
+      padding: 20px;
+    }
+  
+    .title {
+      font-size: 20px;
+    }
+  
+    .benefitsList {
+      font-size: 12px;
+    }
+  }

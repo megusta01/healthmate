@@ -78,3 +78,64 @@
     font-size: 16px;
     line-height: 1.6;
 }
+
+@media (max-width: 1200px) {
+    .featuresSection {
+      width: 90%;
+    }
+  
+    .container {
+      max-width: 90%;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .imageContainer {
+      margin-bottom: 20px;
+    }
+  
+    .cardsContainer {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .featureImage {
+      width: 250px;
+      height: 250px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .featureImage {
+      width: 200px;
+      height: 200px;
+    }
+  
+    .card h3 {
+      font-size: 18px;
+    }
+  
+    .card p {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 360px) {
+    .featuresSection {
+      padding: 20px;
+    }
+  
+    .card h3 {
+      font-size: 16px;
+    }
+  
+    .card p {
+      font-size: 12px;
+    }
+  }

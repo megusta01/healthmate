@@ -50,3 +50,67 @@
     font-size: 16px;
     line-height: 1.6;
 }
+@media (max-width: 1200px) {
+    .futureFeaturesSection {
+      padding: 30px;
+    }
+  
+    .title {
+      font-size: 32px;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .cardsContainer {
+      gap: 20px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .card {
+      min-width: 200px;
+      max-width: 250px;
+    }
+  
+    .card h3 {
+      font-size: 18px;
+    }
+  
+    .card p {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .card {
+      min-width: 150px;
+      max-width: 200px;
+    }
+  
+    .card h3 {
+      font-size: 16px;
+    }
+  
+    .card p {
+      font-size: 12px;
+    }
+  }
+  
+  @media (max-width: 360px) {
+    .futureFeaturesSection {
+      padding: 20px;
+    }
+  
+    .card {
+      min-width: 100px;
+      max-width: 150px;
+    }
+  
+    .card h3 {
+      font-size: 14px;
+    }
+  
+    .card p {
+      font-size: 10px;
+    }
+  }

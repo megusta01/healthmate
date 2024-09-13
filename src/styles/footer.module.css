@@ -83,3 +83,50 @@
     font-size: 14px;
     color: #cfd8dc;
 }
+
+@media (max-width: 1200px) {
+    .footerContainer {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .branding, .navigation, .socialIcons {
+      margin-bottom: 20px;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .footerContainer {
+      gap: 30px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .logo {
+      font-size: 30px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logo {
+      font-size: 24px;
+    }
+  
+    .navigation a, .socialIcons a {
+      font-size: 18px;
+    }
+  }
+  
+  @media (max-width: 360px) {
+    .footerContainer {
+      padding: 20px;
+    }
+  
+    .logo {
+      font-size: 20px;
+    }
+  
+    .navigation a, .socialIcons a {
+      font-size: 16px;
+    }
+  }
