@@ -33,3 +33,101 @@
     border-radius: 20px;
     padding: 5px 10px;
 }
+
+@media (max-width: 1200px) {
+    .header {
+        gap: 60px;
+        padding: 10px 0;
+    }
+
+    .nav {
+        gap: 15px;
+        padding: 0px 15px;
+    }
+
+    .usuario {
+        font-size: 32px;
+        height: 34px;
+        width: 34px;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .header {
+        gap: 40px;
+        padding: 8px 0;
+    }
+
+    .nav {
+        gap: 10px;
+        padding: 0px 10px;
+    }
+
+    .usuario {
+        font-size: 30px;
+        height: 32px;
+        width: 32px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px 0;
+    }
+
+    .nav {
+        gap: 8px;
+        padding: 0px 8px;
+    }
+
+    .usuario {
+        font-size: 28px;
+        height: 30px;
+        width: 30px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 8px 0;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        padding: 0px 5px;
+    }
+
+    .usuario {
+        font-size: 24px;
+        height: 28px;
+        width: 28px;
+    }
+}
+
+@media (max-width: 360px) {
+    .header {
+      flex-direction: column;
+      gap: 10px;
+      padding: 5px 0;
+    }
+  
+    .nav {
+      gap: 3px;
+      padding: 0px 3px;
+    }
+  
+    .usuario {
+      font-size: 20px;
+      height: 24px;
+      width: 24px;
+    }
+  }

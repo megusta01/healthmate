@@ -51,3 +51,32 @@
     color: #374151; /* text-gray-700 */
   }
   
+  @media (max-width: 1200px) {
+    .modal {
+      max-width: 80%;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .modal {
+      max-width: 90%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .modal {
+      max-width: 95%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .modal {
+      max-width: 98%;
+    }
+  }
+  
+  @media (max-width: 360px) {
+    .modal {
+      max-width: 100%;
+    }
+  }
