@@ -81,3 +81,75 @@
 .newPatientButton:hover {
     background-color: #047857; /* Cor do botão ao passar o mouse */
 }
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 90%; 
+    }
+    .title {
+        font-size: 1.75rem; 
+    }
+    .tableHeaderCell, .tableCell {
+        padding: 0.75rem 1rem; 
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        max-width: 85%;
+    }
+    .title {
+        font-size: 1.5rem; 
+    }
+    .tableHeaderCell, .tableCell {
+        padding: 0.5rem 1rem; 
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 80%; 
+    }
+    .title {
+        font-size: 1.25rem; 
+    }
+    .newPatientButton {
+        bottom: 1.5rem; 
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        max-width: 100%;
+        margin: 1rem; 
+    }
+    .title {
+        font-size: 1rem; 
+    }
+    .tableHeaderCell, .tableCell {
+        padding: 0.5rem;
+        font-size: 0.65rem; 
+    }
+    .newPatientButton {
+        padding: 0.5rem 1rem;
+        bottom: 1rem; 
+    }
+}
+
+@media (max-width: 360px) {
+    .container {
+      max-width: 100%;
+      margin: 0.5rem;
+    }
+    .title {
+      font-size: 0.8rem;
+    }
+    .tableHeaderCell, .tableCell {
+      padding: 0.25rem;
+      font-size: 0.5rem;
+    }
+    .newPatientButton {
+      padding: 0.25rem 0.5rem;
+      bottom: 0.5rem;
+    }
+  }
