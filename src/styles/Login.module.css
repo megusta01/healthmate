@@ -126,3 +126,69 @@
     width: 18px;
     height: 18px;
 }
+
+@media (max-width: 1200px) {
+    .container {
+        width: 35vw;
+    }
+}
+
+@media (max-width: 1024px) {
+    .loginContainer {
+        flex-direction: column;
+    }
+
+    .background, .login {
+        width: 100%;
+        height: 50%;
+    }
+
+    .container {
+        width: 50vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 70vw;
+    }
+
+    .title {
+        font-size: 1.75rem;
+    }
+
+    .inputField, .submit, .submitCad, .googleButton {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 85vw;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .inputField, .submit, .submitCad, .googleButton {
+        font-size: 0.85rem;
+        padding: 7px;
+    }
+}
+
+@media (max-width: 360px) {
+    .container {
+      width: 90vw;
+    }
+  
+    .title {
+      font-size: 1.25rem;
+    }
+  
+    .inputField, .submit, .submitCad, .googleButton {
+      font-size: 0.75rem;
+      padding: 6px;
+    }
+  }
