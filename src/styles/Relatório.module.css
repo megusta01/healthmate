@@ -50,3 +50,73 @@
     padding: 5px 300px 30px 300px;
   }
   
+  @media (max-width: 1200px) {
+    .sectionDiv {
+      padding: 20px;
+    }
+  
+    .sectionP {
+      padding: 5px 150px 30px 150px;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .header {
+      gap: 50px;
+    }
+  
+    .nav {
+      height: 32px;
+      padding: 0px 15px;
+    }
+  
+    .usuario {
+      height: 32px;
+      width: 32px;
+      font-size: 32px;
+    }
+  
+    .sectionP {
+      padding: 5px 100px 30px 100px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px;
+    }
+  
+    .nav {
+      margin-top: 10px;
+    }
+  
+    .sectionDiv {
+      padding: 15px;
+    }
+  
+    .sectionP {
+      padding: 5px 50px 30px 50px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .sectionDiv {
+      padding: 10px;
+    }
+  
+    .sectionP {
+      padding: 5px 20px 30px 20px;
+    }
+  }
+  
+  @media (max-width: 360px) {
+    .sectionDiv {
+      padding: 8px;
+    }
+  
+    .sectionP {
+      padding: 5px 10px 20px 10px;
+    }
+  }
