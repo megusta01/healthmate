@@ -7,14 +7,13 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>
         <div className={styles.branding}>
-        <img src="logo (1).svg" className={styles.logo} alt="" />
+        <img src="/logo (1).svg" className={styles.logo} alt="" />
           <p className={styles.tagline}>Sua saúde em boas mãos</p>
         </div>
         <div className={styles.navigation}>
-          <a href="/about">Sobre</a>
-          <a href="/services">Serviços</a>
-          <a href="/contact">Contato</a>
-          <a href="/privacy">Privacidade</a>
+          <a href="#about">Benefícios</a>
+          <a href="#features">Funcionalidades</a>
+          <a href="mailto:gustavofigueredo86@gmail.com">Contato</a>
         </div>
         <div className={styles.socialIcons}>
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
@@ -32,7 +31,7 @@ export default function Footer() {
         </div>
       </div>
       <div className={styles.footerBottom}>
-        <p>&copy; 2024 HealthMate. Todos os direitos reservados.</p>
+        <p>&copy; {new Date().getFullYear()} HealthMate. Todos os direitos reservados.</p>
       </div>
     </footer>
   );

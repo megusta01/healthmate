@@ -13,13 +13,13 @@ export default function Welcome() {
                         seus medicamentos de forma segura e eficiente, garantindo que seus tratamentos estejam
                         sempre em dia e sob controle.
                     </p>
-                    <button className={styles.ctaButton} onClick={() => router.push('/Cadastro')}>
+                    <button className={styles.ctaButton} onClick={() => router.push('/cadastro')}>
                         Comece agora
                     </button>
                 </div>
                 <div className={styles.imageContainer}>
                     <img
-                        src="a39d422a-4242-4430-b1cd-4ca95e838bc9 1.png"
+                        src="/a39d422a-4242-4430-b1cd-4ca95e838bc9 1.png"
                         alt="Ilustração de consulta médica"
                         className={styles.welcomeImage}
                     />

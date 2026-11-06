@@ -1,47 +1,77 @@
-# Healthmate
+# HealthMate
 
 ## Sobre
 
-HealthMate é uma aplicação web projetada para facilitar a gestão de medicamentos para pacientes com condições crônicas e agudas. Voltado principalmente para profissionais de saúde autônomos, o sistema permite o cadastro detalhado de pacientes e seus respectivos medicamentos, enviando lembretes e notificações para garantir a adesão ao tratamento. Além disso, HealthMate sugere locais para compra de medicamentos comissionada, proporcionando uma solução completa e eficiente para o gerenciamento de medicamentos.
+HealthMate é uma aplicação web para facilitar a gestão de medicamentos de pacientes com condições crônicas e agudas.
+Voltado principalmente para profissionais de saúde autônomos, o sistema permite o cadastro detalhado de pacientes e
+seus medicamentos, com lembretes de horário, alerta de recompra e relatórios de acompanhamento.
 
-## Objetivos
+## Funcionalidades
 
-### Objetivo Geral
+- **Cadastro de pacientes** com dados clínicos, endereço e o primeiro medicamento, tudo de uma vez.
+- **Medicamentos** com dosagem, período de uso, estoque e vários horários diários.
+- **Agenda do dia** (Notificações) com todos os horários de todos os pacientes, e **alertas no navegador** no horário de cada dose.
+- **Alerta de estoque baixo** no dashboard, para avisar a hora de recomprar.
+- **Avaliações de saúde** (sintomas, efeitos colaterais, conduta) e **relatórios** com busca e impressão/PDF.
+- **Login** com e-mail/senha ou Google. Cada profissional vê apenas os próprios pacientes.
 
-Facilitar a gestão de medicamentos para condições crônicas e agudas, permitindo que profissionais autônomos cadastrem pacientes e seus respectivos medicamentos. O aplicativo visa fornecer uma solução eficiente e conveniente para o gerenciamento de medicamentos, incluindo lembretes e notificações para pacientes, bem como alertas para a necessidade de compra de novos medicamentos.
+## Como rodar
 
-### Objetivos Específicos
+Pré-requisito: a API ([healthmate-backend](../healthmate-backend)) rodando, por padrão em `http://localhost:3333`.
 
-- **Cadastro Detalhado**: Criar um sistema que permita o cadastro detalhado de pacientes e seus respectivos medicamentos.
-- **Lembretes e Notificações**: Implementar funcionalidades de lembretes e notificações para garantir a adesão ao tratamento.
-- **Relatórios Personalizados**: Desenvolver relatórios personalizados que possam ser compartilhados com profissionais de saúde.
-- **Segurança dos Dados**: Garantir a segurança e privacidade dos dados dos usuários conforme as regulamentações de proteção de dados.
+```bash
+cp .env.example .env.local
+npm install
+npm run dev        # http://localhost:3000
+```
 
-## Tecnologias:
+| Variável | Descrição |
+|---|---|
+| `API_URL` | URL da API. O Next faz proxy de `/api/*` para ela, então ela não vai para o navegador |
+| `NEXT_PUBLIC_GOOGLE_CLIENT_ID` | Opcional. Mostra o botão "Continuar com Google" |
 
-Este projeto utiliza uma combinação de tecnologias modernas para proporcionar uma experiência de e-commerce eficiente e escalável:
+> **Por que um proxy?** O navegador só conversa com o próprio front (`/api/...`). Assim os cookies de sessão
+> são *first-party*: funcionam em Safari/Chrome sem configuração de CORS ou cookies de terceiros.
 
-- **[TypeScript](https://www.typescriptlang.org/)**: Utilizado para adicionar tipagem estática ao JavaScript, melhorando a segurança e a manutenção do código.
-- **[React](https://reactjs.org/)**: Biblioteca JavaScript para construção de interfaces de usuário, permitindo a criação de componentes reutilizáveis e uma experiência de usuário dinâmica.
-- **[Next.js](https://nextjs.org/)**: Framework de React que habilita funcionalidades como renderização do lado do servidor e geração de sites estáticos, melhorando a performance e SEO.
-- **[Prisma](https://www.prisma.io/)**: ORM (Object-Relational Mapping) moderno que facilita a interação com bancos de dados, oferecendo uma forma mais intuitiva e segura de manipular dados.
-- **[Honu](https://honujs.org/)**: Ferramenta utilizada para melhorar a performance e a experiência do usuário através de técnicas de otimização.
-- **[PostgreSQL](https://www.postgresql.org/)**: Sistema de gerenciamento de banco de dados relacional poderoso e open-source, utilizado para armazenar e gerenciar os dados do e-commerce de forma eficiente.
+### Login com Google (opcional)
 
+1. Google Cloud Console → *APIs & Services* → *Credentials* → **OAuth client ID** do tipo *Web application*.
+2. Em *Authorized JavaScript origins*, adicione `http://localhost:3000` e o domínio de produção.
+3. Use o mesmo Client ID em `NEXT_PUBLIC_GOOGLE_CLIENT_ID` (front) e `GOOGLE_CLIENT_ID` (API).
 
-## Equipe:
+## Estrutura
 
-- **Artur Michael**
-  - Função: Desenvolvedor Frontend
-  - Contato: [Email](mailto:arturalvesmorais8@gmail.com) | [GitHub](https://github.com/ArturMichael)
+```
+src/
+  pages/            login, cadastro, dashboard, pacientes/[id], notificacoes, relatorios, perfil
+  components/       Header, AppLayout (rota protegida), Modal, ui.tsx (botões, campos, cards…)
+  components/forms/ PatientForm, MedicamentForm, TimesInput
+  components/home/  landing page
+  contexts/         AuthContext (sessão), ToastContext
+  hooks/            useApi (GET com loading/erro), useReminderAlerts
+  lib/              api.ts (axios + refresh automático), format.ts
+  middleware.ts     redireciona as rotas antigas (/Login, /Dashboard…) para as novas
+```
 
-- **Gustavo Figueredo**
-  - Função: Desenvolvedor Full Stack
-  - Contato: [Email](mailto:gustavofigueredo86@gmail.com) | [GitHub](https://github.com/megusta01)
+## Tecnologias
 
-- **Pedro Henrique**
-  - Função: Desenvolvedor Backend
-  - Contato: [Email](mailto:pedrohrd87@gmail.com) | [GitHub](https://github.com/devpedrohrd)
+- **[Next.js 15](https://nextjs.org/)** (Pages Router) + **React 19** + **TypeScript**
+- **[Tailwind CSS](https://tailwindcss.com/)** + CSS Modules (landing page)
+- **[NestJS](https://nestjs.com/)** + **[Prisma](https://www.prisma.io/)** na API
+- **[PostgreSQL](https://www.postgresql.org/)** hospedado no **[Supabase](https://supabase.com/)**
 
-## Protótipo do projeto:
-- **[FIGMA](https://www.figma.com/design/oQli8vkHGMpDp2GDk9quwt/Healthmate?node-id=0-1&t=1shZlZYTPLMFCASW-1)**
+## Deploy (Vercel)
+
+1. Importe o repositório na Vercel.
+2. Defina `API_URL` com a URL pública da API (ex.: `https://healthmate-api.onrender.com`).
+3. Na API, use `FRONTEND_URL` com o domínio da Vercel e `NODE_ENV=production`.
+
+## Equipe
+
+- **Artur Michael** — Desenvolvedor Frontend · [Email](mailto:arturalvesmorais8@gmail.com) | [GitHub](https://github.com/ArturMichael)
+- **Gustavo Figueredo** — Desenvolvedor Full Stack · [Email](mailto:gustavofigueredo86@gmail.com) | [GitHub](https://github.com/megusta01)
+- **Pedro Henrique** — Desenvolvedor Backend · [Email](mailto:pedrohrd87@gmail.com) | [GitHub](https://github.com/devpedrohrd)
+
+## Protótipo
+
+- **[Figma](https://www.figma.com/design/oQli8vkHGMpDp2GDk9quwt/Healthmate?node-id=0-1&t=1shZlZYTPLMFCASW-1)**

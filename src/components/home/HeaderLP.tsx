@@ -1,7 +1,10 @@
 import React from 'react';
+import Link from 'next/link';
+import { useAuth } from '@/contexts/AuthContext';
 import styles from '../../styles/HeaderLP.module.css'; // Importando o arquivo CSS
 
 const Header: React.FC = () => {
+const { user } = useAuth();
 return (
     <header className={styles.header}>
         <div className={styles.container}>
@@ -24,7 +27,7 @@ return (
             </nav>
 
             {/* Botão de Login */}
-            <button className={styles.loginBtn} onClick={() => window.location.href = "/Login"}>LOGIN</button>
+            <Link className={styles.loginBtn} href={user ? "/dashboard" : "/login"}>{user ? "MEU PAINEL" : "LOGIN"}</Link>
         </div>
     </header>
 );

@@ -19,10 +19,10 @@ export default function Guide() {
           preocupação de esquecer doses importantes. O HealthMate automatiza o processo, mantendo todos informados e no
           controle da saúde.
         </p>
-        <button className={styles.ctaButton} onClick={() => router.push('/Cadastro')} >Cadastre-se agora</button>
+        <button className={styles.ctaButton} onClick={() => router.push('/cadastro')} >Cadastre-se agora</button>
       </div>
       <div className={styles.imageContainer}>
-        <img src="educate 1.png" alt="Ilustração de guia rápido" className={styles.guideImage}/>
+        <img src="/educate 1.png" alt="Ilustração de guia rápido" className={styles.guideImage}/>
       </div>
     </div>
   )

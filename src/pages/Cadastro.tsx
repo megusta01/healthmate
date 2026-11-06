@@ -1,132 +1,114 @@
-import React, { useState } from 'react';
-import Footer from "@/components/Footer";
-import GoogleLogin from "@/components/GoogleLogin";
-import Header from "@/components/Header";
-import axios from 'axios';
-import { useRouter } from 'next/router';
+import { FormEvent, useEffect, useState } from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import AuthShell from '@/components/AuthShell'
+import GoogleLogin from '@/components/GoogleLogin'
+import { Alert, Button, Input } from '@/components/ui'
+import { useAuth } from '@/contexts/AuthContext'
+import { getErrorMessage } from '@/lib/api'
+import { clean, maskPhone } from '@/lib/format'
 
-export default function Cadastrar() {
-    const [date, setDate] = useState<string>('');
-    const [nome, setNome] = useState('');
-    const [sobrenome, setSobrenome] = useState('');
-    const [telefone, setTelefone] = useState('');
-    const [email, setEmail] = useState('');
-    const [senha, setSenha] = useState('');
-    const router = useRouter();
+export default function CadastroPage() {
+  const { user, loading, register } = useAuth()
+  const router = useRouter()
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    specialty: '',
+    license: '',
+    password: '',
+    confirm: '',
+  })
+  const [error, setError] = useState<string | null>(null)
+  const [submitting, setSubmitting] = useState(false)
 
-    const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        let input = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
-        if (input.length > 2) {
-            input = `${input.slice(0, 2)}/${input.slice(2)}`;
-        }
-        if (input.length > 5) {
-            input = `${input.slice(0, 5)}/${input.slice(5)}`;
-        }
-        setDate(input);
-    };
+  useEffect(() => {
+    if (!loading && user) void router.replace('/dashboard')
+  }, [loading, user, router])
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        console.log("Botão Cadastrar-se clicado"); 
-        try {
-            const token = localStorage.getItem('token');
-            // Faz a requisição ao backend para criar o novo profissional
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/profissional`, {
-                nome,
-                email,
-                telefone,
-                senha,
-            },{
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
-            });
+  const set = (field: keyof typeof form) => (e: { target: { value: string } }) =>
+    setForm((f) => ({ ...f, [field]: field === 'phone' ? maskPhone(e.target.value) : e.target.value }))
 
-            if (response.status === 201) {
-                // Redireciona para a tela de login após o cadastro
-                router.push('/Login');
-            } else {
-                // Lida com possíveis respostas que não sejam 201
-                console.error("Erro inesperado ao cadastrar profissional:", response.data);
-            }
-        } catch (error) {
-            console.error("Erro ao cadastrar profissional:", error);
-            // Adicione tratamento de erros aqui, por exemplo, exibir uma mensagem para o usuário
-        }
-    };
+  const passwordWeak =
+    form.password.length > 0 &&
+    (form.password.length < 8 || !/[A-Za-z]/.test(form.password) || !/\d/.test(form.password))
+  const mismatch = form.confirm.length > 0 && form.confirm !== form.password
 
-    return (
-        <>
-            <div className='h-screen'>
-                <div className='fixed w-full'>
-                    <Header />
-                </div>
-                <div className="flex justify-center items-center p-16 bg-gray-100 min-h-screen">
-                    <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-md max-w-md w-full space-y-6">
-                        <div className="text-center">
-                            <h2 className="text-2xl font-bold text-gray-900">SEJA BEM-VINDO!</h2>
-                        </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <input
-                                type="text"
-                                placeholder="Nome"
-                                className="border rounded-lg p-2 w-full"
-                                value={nome}
-                                onChange={(e) => setNome(e.target.value)}
-                                required
-                            />
-                            <input
-                                type="text"
-                                placeholder="Sobrenome"
-                                className="border rounded-lg p-2 w-full"
-                                value={sobrenome}
-                                onChange={(e) => setSobrenome(e.target.value)}
-                                required
-                            />
-                            <input
-                                type="tel"
-                                placeholder="Telefone"
-                                className="border rounded-lg p-2 w-full"
-                                value={telefone}
-                                onChange={(e) => setTelefone(e.target.value)}
-                            />
-                            <input
-                                type="email"
-                                placeholder="Email"
-                                className="border rounded-lg p-2 w-full"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                required
-                            />
-                            <input
-                                type="password"
-                                placeholder="Senha"
-                                className="border rounded-lg p-2 w-full"
-                                value={senha}
-                                onChange={(e) => setSenha(e.target.value)}
-                                required
-                            />
-                            <input
-                                type="text"
-                                placeholder="Data de Nascimento"
-                                className="border rounded-lg p-2 w-full"
-                                value={date}
-                                onChange={handleDateChange}
-                            />
-                        </div>
-                        <button
-                            type="submit"
-                            className="bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition duration-200"
-                        >
-                            Cadastrar-se
-                        </button>
-                        <div className="flex justify-center">
-                            <GoogleLogin />
-                        </div>
-                    </form>
-                </div>
-                <Footer />
-            </div>
-        </>
-    );
+  async function handleSubmit(e: FormEvent) {
+    e.preventDefault()
+    if (passwordWeak || mismatch) return
+    setError(null)
+    setSubmitting(true)
+    try {
+      const { confirm: _confirm, ...data } = form
+      await register(clean(data))
+      await router.replace('/dashboard')
+    } catch (err) {
+      setError(getErrorMessage(err))
+    } finally {
+      setSubmitting(false)
+    }
+  }
+
+  return (
+    <AuthShell title="Criar conta">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+        {error && <Alert>{error}</Alert>}
+        <Input label="Nome completo" autoComplete="name" value={form.name} onChange={set('name')} required />
+        <Input
+          label="E-mail"
+          type="email"
+          autoComplete="email"
+          value={form.email}
+          onChange={set('email')}
+          required
+        />
+        <Input label="Telefone" type="tel" autoComplete="tel" value={form.phone} onChange={set('phone')} />
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <Input
+            label="Especialidade"
+            placeholder="Ex.: Enfermagem"
+            value={form.specialty}
+            onChange={set('specialty')}
+          />
+          <Input
+            label="Registro profissional"
+            placeholder="Ex.: COREN-SP 123456"
+            value={form.license}
+            onChange={set('license')}
+          />
+        </div>
+        <Input
+          label="Senha"
+          type="password"
+          autoComplete="new-password"
+          value={form.password}
+          onChange={set('password')}
+          hint="Mínimo de 8 caracteres, com letras e números."
+          error={passwordWeak ? 'Use 8+ caracteres com letras e números.' : undefined}
+          required
+        />
+        <Input
+          label="Confirmar senha"
+          type="password"
+          autoComplete="new-password"
+          value={form.confirm}
+          onChange={set('confirm')}
+          error={mismatch ? 'As senhas não conferem.' : undefined}
+          required
+        />
+        <Button type="submit" loading={submitting} className="mt-2 w-full">
+          Criar conta
+        </Button>
+        <p className="text-center text-sm text-gray-600">
+          Já tem conta?{' '}
+          <Link href="/login" className="font-medium text-brand-700 hover:underline">
+            Entrar
+          </Link>
+        </p>
+        <GoogleLogin onSuccess={() => void router.replace('/dashboard')} onError={setError} />
+      </form>
+    </AuthShell>
+  )
 }

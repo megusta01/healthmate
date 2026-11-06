@@ -8,7 +8,7 @@ export default function Features() {
                 <div className={styles.container}>
                     <div className={styles.imageContainer}>
                         <img
-                            src="Fale-conosco_Trabalhe-conosco 1.png"
+                            src="/Fale-conosco_Trabalhe-conosco 1.png"
                             alt="Ilustração de profissionais de saúde"
                             className={styles.featureImage}
                         />
