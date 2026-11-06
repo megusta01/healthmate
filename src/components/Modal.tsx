@@ -32,7 +32,7 @@ export default function Modal({ open, onClose, title, children, size = 'md' }: M
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-gray-900/50 p-4 sm:items-center"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900/50 p-2 sm:p-6"
       onMouseDown={(e) => e.target === e.currentTarget && onClose()}
     >
       <div
@@ -41,11 +41,12 @@ export default function Modal({ open, onClose, title, children, size = 'md' }: M
         aria-modal="true"
         aria-labelledby={titleId}
         tabIndex={-1}
-        className={`my-8 w-full rounded-2xl bg-white shadow-xl outline-none ${
+        // altura limitada à tela: o conteúdo rola por dentro e o topo nunca some
+        className={`flex max-h-full w-full flex-col overflow-hidden rounded-2xl bg-white shadow-xl outline-none ${
           size === 'lg' ? 'max-w-3xl' : 'max-w-lg'
         }`}
       >
-        <header className="flex items-center justify-between border-b border-gray-100 px-6 py-4">
+        <header className="flex shrink-0 items-center justify-between border-b border-gray-100 px-6 py-4">
           <h2 id={titleId} className="text-lg font-semibold text-gray-900">
             {title}
           </h2>
@@ -57,7 +58,7 @@ export default function Modal({ open, onClose, title, children, size = 'md' }: M
             <FontAwesomeIcon icon={faXmark} className="h-5 w-5" />
           </button>
         </header>
-        <div className="px-6 py-5">{children}</div>
+        <div className="overflow-y-auto overscroll-contain px-6 pt-5">{children}</div>
       </div>
     </div>
   )

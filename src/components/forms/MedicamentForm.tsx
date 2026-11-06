@@ -60,7 +60,7 @@ export default function MedicamentForm({
     <form onSubmit={handleSubmit} className="flex flex-col gap-5">
       {error && <Alert>{error}</Alert>}
       <MedicamentFields value={value} onChange={setValue} showStatus={!!medicament} />
-      <div className="flex justify-end gap-3 border-t border-gray-100 pt-4">
+      <div className="sticky bottom-0 -mx-6 flex justify-end gap-3 border-t border-gray-100 bg-white px-6 py-4">
         <Button type="button" variant="ghost" onClick={onCancel}>
           Cancelar
         </Button>
