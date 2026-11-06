@@ -17,7 +17,7 @@ seus medicamentos, com lembretes de horário, alerta de recompra e relatórios d
 
 ## Como rodar
 
-Pré-requisito: a API ([healthmate-backend](../healthmate-backend)) rodando, por padrão em `http://localhost:3333`.
+Pré-requisito: a API ([healthmate-api](https://github.com/megusta01/healthmate-api)) rodando, por padrão em `http://localhost:3333`.
 
 ```bash
 cp .env.example .env.local
@@ -70,7 +70,6 @@ src/
 
 - **Artur Michael** — Desenvolvedor Frontend · [Email](mailto:arturalvesmorais8@gmail.com) | [GitHub](https://github.com/ArturMichael)
 - **Gustavo Figueredo** — Desenvolvedor Full Stack · [Email](mailto:gustavofigueredo86@gmail.com) | [GitHub](https://github.com/megusta01)
-- **Pedro Henrique** — Desenvolvedor Backend · [Email](mailto:pedrohrd87@gmail.com) | [GitHub](https://github.com/devpedrohrd)
 
 ## Protótipo
 
